@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Hello World!</title>
+        <style>
+            #me {
+                background-color: red;
+                height: 200px;
+                width: 300px;
+                position: absolute;
+            }
+            #you {
+                background-color: blue;
+                height: 200px;
+                width: 300px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="me"></div>
+        <div id="you"></div>
+    </body>
+    <link rel="stylesheet" type="text/css" href="../motion.css" />
+    <script src="../motion.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        motionjs.transition([{
+            select: "#you",
+            top: '200px',
+            left: '400px',
+            duration: '400ms'
+        }, {
+            select: "#me",
+            left: '800px',
+            top: '200px',
+            duration: '6s'
+        }]);
+    </script>
+</html>

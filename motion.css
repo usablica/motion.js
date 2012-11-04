@@ -1,0 +1,4 @@
+.motion_js_transition_all {
+	-webkit-transition-property: all;
+	-webkit-transition-timing-function: ease;
+}
