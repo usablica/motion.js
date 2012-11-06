@@ -13,6 +13,7 @@
                 height: 200px;
                 width: 300px;
                 position: absolute;
+                border-radius: 50px;
             }
         </style>
     </head>
@@ -26,14 +27,18 @@
     <script type="text/javascript">
         motionjs.transition([{
             select: "#you",
-            top: '200px',
-            left: '400px',
-            duration: '400ms'
+            duration: '400ms',
+            style: {
+                top: '200px',
+                left: '400px'
+            }
         }, {
             select: "#me",
-            left: '800px',
-            top: '200px',
-            duration: '6s'
+            duration: '6s',
+            style: {
+                left: '800px',
+                top: '200px'
+            },
         }]);
     </script>
 </html>
