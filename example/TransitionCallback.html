@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Hello World!</title>
+        <title>CSS3 Transition Callback</title>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
         <style>
@@ -13,13 +13,13 @@
                 top:0;
                 margin-left: -250px;
                 font-family: Arial;
-                font-size: 90px;
+                font-size: 50px;
             }
         </style>
     </head>
     <body>
         <div id="hello_world">
-            Hello World!
+            With callback
         </div>
         <div id="you"></div>
     </body>
@@ -31,6 +31,9 @@
             style: {
                 top: '200px',
                 opacity: 1
+            },
+            end: function(event) {
+                alert("End of transition.");
             }
         }]);
     </script>
