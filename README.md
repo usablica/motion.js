@@ -3,7 +3,7 @@ motion.js is an easy to use, cross-browser CSS3 library for creating animations 
 
 ## Roadmap
 
--Testing transition support + callback event in Firefox, Chrome, Opera and IE
+- Testing transition support + callback event in Firefox, Chrome, Opera and IE
 
 ## History
 
