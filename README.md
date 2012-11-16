@@ -3,6 +3,8 @@ motion.js is an easy to use, cross-browser CSS3 library for creating animations 
 
 ## Roadmap
 
+- Add ability to set `TransitionProperty`, now `all` by default.
+- Add ability to set `TransitionTimingFunction`, now `ease` by default.
 - Testing transition support + callback event in Firefox, Chrome, Opera and IE
 
 ## History
