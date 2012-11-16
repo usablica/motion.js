@@ -11,14 +11,14 @@ var MotionJs = motionjs = (function() {
     var version = "0.1.0";
 
     //Default motion.js configs
-    var DEFAULT_TRANSITION_DURATION = 0,
-        DEFAULT_TRANSITION_PROPERTY = 'all',
-        DEFAULT_TRANSITION_TIMING_FUNCTION = 'ease',
-        VERBOSE_MODE = true;
+    var default_transition_duration = 0,
+        default_transition_property = 'all',
+        default_transition_timing_function = 'ease',
+        verbose_mode = true;
 
     //Local variables
-    var ANIMATION_SUPPORT = false,
-        PROPERTY_PREFIX = '';
+    var support_animation = false,
+        property_prefix = '';
 
     /**
      * Do a transition with given parameters
@@ -68,7 +68,7 @@ var MotionJs = motionjs = (function() {
         };
         //in order to prevent firing callback for each css property, we use a flag and execute the callback one time
         var isCalled = false;
-        actor_object.addEventListener(transition_end_events[PROPERTY_PREFIX], function(args) {
+        actor_object.addEventListener(transition_end_events[property_prefix], function(args) {
             //only one time
             if(!isCalled) {
                 isCalled = true;
@@ -85,7 +85,7 @@ var MotionJs = motionjs = (function() {
      */
     function _set_transition_duration(actor_object, duration) {
         var transition_duration = {};
-        transition_duration['TransitionDuration'] = duration || DEFAULT_ANIMATIONS_DURATION;
+        transition_duration['TransitionDuration'] = duration || default_transition_duration;
         _set_style(actor_object, transition_duration, true);
     }
 
@@ -97,8 +97,8 @@ var MotionJs = motionjs = (function() {
      */
     function _set_transitionable(actor_object) {
         var actor_style = {};
-        actor_style["TransitionProperty"] = DEFAULT_TRANSITION_PROPERTY;
-        actor_style["TransitionTimingFunction"] = DEFAULT_TRANSITION_TIMING_FUNCTION;
+        actor_style["TransitionProperty"] = default_transition_property;
+        actor_style["TransitionTimingFunction"] = default_transition_timing_function;
         _set_style(actor_object, actor_style, true);
     }
 
@@ -111,7 +111,7 @@ var MotionJs = motionjs = (function() {
      */
     function _set_style(actor_object, styles, with_prefix) {
         var prefix = "";
-        if (with_prefix) prefix = PROPERTY_PREFIX;
+        if (with_prefix) prefix = property_prefix;
         for (var style_prop in styles) {
             actor_object.style[prefix + style_prop] = styles[style_prop];
         }
@@ -128,17 +128,17 @@ var MotionJs = motionjs = (function() {
             test_element = document.querySelector("html");
 
         if (test_element.style.animationName) {
-            ANIMATION_SUPPORT = true;
+            support_animation = true;
         } else {
             for (var i = 0, domPrefixLen = domPrefixes.length; i < domPrefixLen; i++) {
                 if (test_element.style[domPrefixes[i] + 'AnimationName'] !== undefined) {
-                    PROPERTY_PREFIX = domPrefixes[i];
-                    ANIMATION_SUPPORT = true;
+                    property_prefix = domPrefixes[i];
+                    support_animation = true;
                     break;
                 }
             }
         }
-        if(!ANIMATION_SUPPORT && VERBOSE_MODE) {
+        if(!support_animation && verbose_mode) {
             alert('Sorry, your browser doesn\'t support CSS3 animation. Upgrade your browser or use modern browsers such as Mozilla Firefox or Google Chrome.');
         }
     }
