@@ -37,7 +37,7 @@ var MotionJs = motionjs = (function() {
                 for (var j = 0, motion_item_objects_len = motion_item.length; j < motion_item_objects_len; j++) {
                     var actor_object = motion_item[j];
                     //first, add the transition
-                    _set_transitionable(actor_object);
+                    _set_transitionable(actor_object, item.property, item.timingFunction);
                     //set the styles
                     _set_style(actor_object, item.style);
                     //set transition duration
@@ -95,10 +95,10 @@ var MotionJs = motionjs = (function() {
      * @param {Object} actor_object
      * @api private
      */
-    function _set_transitionable(actor_object) {
+    function _set_transitionable(actor_object, property, timingFunction) {
         var actor_style = {};
-        actor_style["TransitionProperty"] = default_transition_property;
-        actor_style["TransitionTimingFunction"] = default_transition_timing_function;
+        actor_style["TransitionProperty"] = property || default_transition_property;
+        actor_style["TransitionTimingFunction"] = timingFunction || default_transition_timing_function;
         _set_style(actor_object, actor_style, true);
     }
 

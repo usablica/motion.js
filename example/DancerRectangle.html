@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Dancer Rectangle</title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <style>
+            .rect {
+                position: absolute;
+                background-color: black;
+                height: 100px;
+                width: 100px;
+            }
+            #rect2 {
+                margin-left: 200px;
+            }
+            #rect3 {
+                margin-left: 400px;
+            }
+            #rect4 {
+                margin-left: 600px;
+            }
+            #container {
+                width: 700px;
+                position: relative;
+                left: 50%;
+                margin-left: -350px;
+                top: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="rect1" class="rect"></div>
+            <div id="rect2" class="rect"></div>
+            <div id="rect3" class="rect"></div>
+            <div id="rect4" class="rect"></div>
+        </div>
+    </body>
+    <script src="../motion.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var current = 1,
+            transitionTop,
+            toEnd = true;
+
+        setInterval(function() {
+            if(current > 4) {
+                toEnd = !toEnd;
+                current = 1;
+            }
+            if(toEnd) {
+                transitionTop = "100px";
+            } else {
+                transitionTop = "0px";
+            }
+            motionjs.transition([{
+                select: '#rect' + current,
+                duration: '300ms',
+                style: {
+                    top: transitionTop
+                },
+                end: function() {
+                    current++;
+                }
+            }]);
+        }, 320);
+    </script>
+</html>
