@@ -52,7 +52,7 @@
             } else {
                 transitionTop = "0px";
             }
-            motionjs.transition([{
+            motionJs.transition({
                 select: '#rect' + current,
                 duration: '300ms',
                 style: {
@@ -61,7 +61,7 @@
                 end: function() {
                     current++;
                 }
-            }]);
+            });
         }, 320);
     </script>
 </html>
