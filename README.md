@@ -1,5 +1,5 @@
 <p align="center"><img src="http://www.usabli.ca/motionjs_200.png"></p>  
-motion.js is an easy to use, cross-browser CSS3 library for creating animations in web.
+MotionJs is an easy to use, cross-browser CSS3 library for creating animations in web.
 
 ## Roadmap
 - Add ability to set both `Array` and single `Object` to `transition` function.
