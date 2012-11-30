@@ -5,7 +5,7 @@
  *
  * Copyright (C) 2012 usabli.ca - Afshin Mehrabani (afshin.meh@gmail.com)
  */
-var MotionJs = motionjs = (function() {
+window.motionJs = (function() {
     
     //version
     var version = "0.2.0";
@@ -21,32 +21,45 @@ var MotionJs = motionjs = (function() {
         property_prefix = '';
 
     /**
-     * Do a transition with given parameters
+     * Do a transition with given parameters. This function accepts both Array and single Object as parameter.
      *
-     * @param {Array} motion_obj
+     * @param {Array|Object} motion_obj
      * @api public
      */
     function transition(motion_obj) {
-        for (var i = 0, motion_objects_len = motion_obj.length; i < motion_objects_len; i++) {
-            var item = motion_obj[i];
-            //get all objects with given selector from DOM
-            var motion_item = document.querySelectorAll(item.select);
+        if(motion_obj instanceof Array) {
+            for (var i = 0, motion_objects_len = motion_obj.length; i < motion_objects_len; i++) {
+                _doTransition(motion_obj[i]);
+            }
+        } else if (motion_obj instanceof Object) {
+            _doTransition(motion_obj);
+        }
+    }
+    
+    /**
+     * Apply transition to a single element with given parameters
+     *
+     * @param {Object} item
+     * @api private
+     */
+    function _doTransition(item) {
+        //get all objects with given selector from DOM
+        var motion_item = document.querySelectorAll(item.select);
 
-            //each motion object can select multiple item, so we have an array
-            if (motion_item && motion_item.length > 0) {
-                for (var j = 0, motion_item_objects_len = motion_item.length; j < motion_item_objects_len; j++) {
-                    var actor_object = motion_item[j];
-                    //first, add the transition
-                    _set_transitionable(actor_object, item.property, item.timingFunction);
-                    //set the styles
-                    _set_style(actor_object, item.style);
-                    //set transition duration
-                    _set_transition_duration(actor_object, item.duration);
-                }
-                //set transition end callback
-                if(item.end instanceof Function) {
-                    _set_transition_end_callack(motion_item[0], item.end);
-                }
+        //each motion object can select multiple item, so we have an array
+        if (motion_item && motion_item.length > 0) {
+            for (var j = 0, motion_item_objects_len = motion_item.length; j < motion_item_objects_len; j++) {
+                var actor_object = motion_item[j];
+                //first, add the transition
+                _set_transitionable(actor_object, item.property, item.timingFunction);
+                //set the styles
+                _set_style(actor_object, item.style);
+                //set transition duration
+                _set_transition_duration(actor_object, item.duration);
+            }
+            //set transition end callback
+            if(item.end instanceof Function) {
+                _set_transition_end_callack(motion_item[0], item.end);
             }
         }
     }
