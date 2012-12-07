@@ -1,5 +1,5 @@
 /*
- * motion.js 0.2.0
+ * motion.js 0.3.0
  * http://usablica.github.com/motion.js
  * MIT licensed
  *
@@ -8,7 +8,7 @@
 window.motionJs = (function() {
     
     //version
-    var version = "0.2.0";
+    var version = "0.3.0";
 
     //Default motion.js configs
     var default_transition_duration = 0,
