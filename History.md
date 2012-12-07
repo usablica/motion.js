@@ -1,3 +1,7 @@
+### v0.3.0 - Friday, December 7, 2012
+- Add ability to set both `Array` and single `Object` to `transition` function.
+- Run animation objects one after one in `Array` mode.
+
 ### v0.2.0 - Saturday, November 24, 2012
 - Add ability to set `TransitionProperty`, now `all` by default.
 - Add ability to set `TransitionTimingFunction`, now `ease` by default.
