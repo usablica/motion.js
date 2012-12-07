@@ -16,11 +16,14 @@ MotionJs is an easy to use, cross-browser CSS3 library for creating animations i
 - Opera Mobile 10+
 
 ## Roadmap
-- Add ability to set both `Array` and single `Object` to `transition` function.
-- Run animation objects one after one in `Array` mode.
-- Testing transition support + callback event in Firefox, Chrome, Opera and IE
+- Ability to run animations after the end of previous animation, in `Array` mode only.
+- Add `rotate` to animations.
 
 ## History
+
+### v0.3.0 - Friday, December 7, 2012
+- Add ability to set both `Array` and single `Object` to `transition` function.
+- Run animation objects one after one in `Array` mode.
 
 ### v0.2.0 - Saturday, November 24, 2012
 - Add ability to set `TransitionProperty`, now `all` by default.
