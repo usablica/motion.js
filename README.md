@@ -1,6 +1,20 @@
 <p align="center"><img src="http://www.usabli.ca/motionjs_200.png"></p>  
 MotionJs is an easy to use, cross-browser CSS3 library for creating animations in web.
 
+## Browser Compatibility
+### Desktop
+- Google Chrome 4.0+
+- Mozilla Firefox 4.0+
+- Safari 3.1+
+- Opera 10.5+
+- Internet Explorer 10+
+
+### Mobile
+- iOS Safari 3.2+
+- Andriod Browser 2.1+
+- Blackberry Browser 7.0+
+- Opera Mobile 10+
+
 ## Roadmap
 - Add ability to set both `Array` and single `Object` to `transition` function.
 - Run animation objects one after one in `Array` mode.
