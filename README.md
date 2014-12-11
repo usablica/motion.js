@@ -32,7 +32,7 @@ Motion.js is an easy to use, cross-browser CSS3 library for creating animations 
 - Add `Dancer Rectangle` new example
 
 ### v0.1.0 - Sunday, November 11, 2012 (Initial Version)
-- Create simple transitions with css proprties
+- Create simple transitions with css properties
 - Callback function for after animation ends
 
 ## Contributing
