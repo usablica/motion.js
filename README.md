@@ -12,7 +12,7 @@ Motion.js is an easy to use, cross-browser CSS3 library for creating animations 
 
 ### Mobile
 - iOS Safari 3.2+
-- Andriod Browser 2.1+
+- Android Browser 2.1+
 - Blackberry Browser 7.0+
 - Opera Mobile 10+
 
