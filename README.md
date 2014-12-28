@@ -1,6 +1,6 @@
 <p align="center"><img src="http://www.usabli.ca/motionjs_200.png"></p>  
 Motion.js is an easy to use, cross-browser CSS3 library for creating animations in web.
-<img src="https://secure.travis-ci.org/usablica/motion.js.png">
+<img src="https://secure.travis-ci.org/usablica/motion.js.svg">
 
 ## Browser Compatibility
 ### Desktop
